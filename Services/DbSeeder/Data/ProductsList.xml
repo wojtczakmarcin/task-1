@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Products>
+	<Product>
+		<Name>Product One</Name>
+		<Category>Category 1</Category>
+		<Description>This is the description for product one.</Description>
+		<Price>89.99</Price>
+	</Product>
+	<Product>
+		<Name>Product Two</Name>
+		<Category>Category 2</Category>
+		<Description>This is the description for product two.</Description>
+		<Price>39.99</Price>
+	</Product>
+	<Product>
+		<Name>Product Three</Name>
+		<Category>Category 1</Category>
+		<Description>This is the description for product three.</Description>
+		<Price>19.99</Price>
+	</Product>
+	<Product>
+		<Name>Product Four</Name>
+		<Category>Category 2</Category>
+		<Description>This is the description for product four.</Description>
+		<Price>29.99</Price>
+	</Product>
+	<Product>
+		<Name>Product Five</Name>
+		<Category>Category 3</Category>
+		<Description>This is the description for product five.</Description>
+		<Price>59.99</Price>
+	</Product>
+	<Product>
+		<Name>Product Six</Name>
+		<Category>Category 3</Category>
+		<Description>This is the description for product six.</Description>
+		<Price>19.99</Price>
+	</Product>
+	<Product>
+		<Name>Product Seven</Name>
+		<Category>Category 1</Category>
+		<Description>This is the description for product seven.</Description>
+		<Price>29.99</Price>
+	</Product>
+	<Product>
+		<Name>Product Eight</Name>
+		<Category>Category 4</Category>
+		<Description>This is the description for product eight.</Description>
+		<Price>99.99</Price>
+	</Product>
+	<Product>
+		<Name>Product Nine</Name>
+		<Category>Category 2</Category>
+		<Description>This is the description for product nine.</Description>
+		<Price>59.99</Price>
+	</Product>
+	<Product>
+		<Name>Product Ten</Name>
+		<Category>Category 3</Category>
+		<Description>This is the description for product ten.</Description>
+		<Price>29.99</Price>
+</Product>
+</Products>

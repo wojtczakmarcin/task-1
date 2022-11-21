@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+  productsdb:
+    container_name: productsdb
+    environment:
+        MSSQL_SA_PASSWORD: "TeSt87654321!!"
+        ACCEPT_EULA: "Y"
+    restart: always
+    ports:
+      - "1433:1433"
+
+  dbseeder:
+    container_name: dbseeder
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:ProductsConnectionString=Server=productsdb;Database=ProductsDb;User Id=sa;Password=TeSt87654321!!;Encrypt=False"
+    depends_on:
+      - productsdb
+    ports:
+      - "8000:80"
+
+  products.api:
+    container_name: products.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:ProductsConnectionString=Server=productsdb;Database=ProductsDb;User Id=sa;Password=TeSt87654321!!;Encrypt=False"
+    depends_on:
+      - productsdb
+    ports:
+      - "8001:80"
+
+  webapp:
+    container_name: webapp
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ApiSettings:ProductsUrl=http://products.api"
+    depends_on:
+      - products.api
+    ports:
+      - "8002:80"
+    restart: always
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro

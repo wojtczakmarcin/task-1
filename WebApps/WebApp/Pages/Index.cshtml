@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<hr />
+
+<div class="container">
+    <div class="row">
+        <table class="arrowes-table table-striped" style="width:100%; margin-top: 2em; margin-bottom: 2em">
+            <thead>
+                <tr>
+                    <th>Numer ID</th>
+                    <th>Nazwa produktu</th>
+                    <th>Kategoria</th>
+                    <th>Opis produktu</th>
+                    <th>Cena</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.Products.OrderBy(x => x.Id))
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td><span class="brand-red">@item.Category</span></td>
+                        <td>@item.Description</td>
+                        <td>@item.Price $</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

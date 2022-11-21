@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  productsdb:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+
+  dbseeder:
+    image: ${DOCKER_REGISTRY-}dbseeder
+    build:
+      context: .
+      dockerfile: Services/DbSeeder/Dockerfile
+
+  products.api:
+    image: ${DOCKER_REGISTRY-}productsapi
+    build:
+      context: .
+      dockerfile: Services/Products.API/Dockerfile
+
+  webapp:
+    image: ${DOCKER_REGISTRY-}webapp
+    build:
+      context: .
+      dockerfile: WebApps/WebApp/Dockerfile
+
+
